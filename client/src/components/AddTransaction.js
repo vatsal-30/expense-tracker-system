@@ -1,3 +1,4 @@
+import { set } from 'mongoose';
 import React, {useState, useContext} from 'react'
 import { GlobalContext } from '../context/GlobalState';
 
@@ -16,10 +17,11 @@ export const AddTransaction = () => {
     }
 
     addTransaction(newTransaction);
+    setText("");
+    setAmount(0);
   }
 
-  return (
-    <>
+  return <>
       <h3>Add new transaction</h3>
       <form onSubmit={onSubmit}>
         <div className="form-control">
@@ -35,6 +37,5 @@ export const AddTransaction = () => {
         </div>
         <button className="btn">Add transaction</button>
       </form>
-    </>
-  )
-}
+    </>; 
+  }
