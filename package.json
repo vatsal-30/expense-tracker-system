@@ -4,6 +4,7 @@
   "description": "Backend for expense tracker",
   "main": "server.js",
   "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
